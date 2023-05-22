@@ -1,6 +1,6 @@
 /*
-  NeoPixel uLisp Extension - Version 1 - Unreleased
-  See http://www.ulisp.com/show?282B
+  NeoPixel uLisp Extension - Version 1a - 22nd May 2023
+  See http://www.ulisp.com/show?4GMV
 */
 
 #include <Adafruit_NeoPixel.h>
@@ -12,6 +12,9 @@
   // Defined in core
 #elif defined(ARDUINO_QTPY_M0)
   #define NEOPIXEL_NUM 1
+#elif defined(ARDUINO_GEMMA_M0) // For NeoPixel Trinkey
+  #define NEOPIXEL_NUM 4
+  #define PIN_NEOPIXEL 9
 #endif
 
 Adafruit_NeoPixel pixels(NEOPIXEL_NUM, PIN_NEOPIXEL, NEO_GRB + NEO_KHZ800);
